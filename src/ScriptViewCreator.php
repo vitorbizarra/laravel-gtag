@@ -1,31 +1,31 @@
 <?php
 
-namespace VitorBizarra\GoogleAnalytics;
+namespace VitorBizarra\Gtag;
 
 use Illuminate\View\View;
-use VitorBizarra\GoogleAnalytics\Exceptions\GoogleAnalyticsIdNotSetException;
+use VitorBizarra\Gtag\Exceptions\GtagIdNotSetException;
 
 class ScriptViewCreator
 {
     /**
-     * @var \VitorBizarra\GoogleAnalytics\GoogleAnalytics
+     * @var \VitorBizarra\Gtag\Gtag
      */
-    protected $googleAnalytics;
+    protected $gtag;
 
-    public function __construct(GoogleAnalytics $googleAnalytics)
+    public function __construct(Gtag $gtag)
     {
-        $this->googleAnalytics = $googleAnalytics;
+        $this->gtag = $gtag;
     }
 
     public function create(View $view)
     {
-        if ($this->googleAnalytics->isEnabled() && empty($this->googleAnalytics->getId())) {
-            throw new GoogleAnalyticsIdNotSetException;
+        if ($this->gtag->isEnabled() && empty($this->gtag->getId())) {
+            throw new GtagIdNotSetException;
         }
 
         $view
-            ->with('enabled', $this->googleAnalytics->isEnabled())
-            ->with('id', $this->googleAnalytics->getId())
-            ->with('domain', $this->googleAnalytics->getDomain());
+            ->with('enabled', $this->gtag->isEnabled())
+            ->with('id', $this->gtag->getId())
+            ->with('domain', $this->gtag->getDomain());
     }
 }

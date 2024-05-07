@@ -1,16 +1,16 @@
 <?php
 
-namespace VitorBizarra\GoogleAnalytics\Facades;
+namespace VitorBizarra\Gtag\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \VitorBizarra\GoogleAnalytics\GoogleAnalytics
+ * @see \VitorBizarra\Gtag\Gtag
  */
-class GoogleAnalytics extends Facade
+class Gtag extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return 'google-analytics';
+        return 'gtag';
     }
 }
