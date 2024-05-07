@@ -1,7 +1,7 @@
 # This is my package laravel-google-analytics
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/vitorbizarra/laravel-google-analytics.svg?style=flat-square)](https://packagist.org/packages/vitorbizarra/laravel-google-analytics)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/vitorbizarra/laravel-google-analytics/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/vitorbizarra/laravel-google-analytics/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/vitorbizarra/laravel-google-analytics/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/vitorbizarra/laravel-google-analytics/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/vitorbizarra/laravel-google-analytics.svg?style=flat-square)](https://packagist.org/packages/vitorbizarra/laravel-google-analytics)
 
