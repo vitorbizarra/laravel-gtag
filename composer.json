@@ -77,7 +77,5 @@
                 "GoogleAnalytics": "VitorBizarra\\GoogleAnalytics\\Facades\\GoogleAnalytics"
             }
         }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
