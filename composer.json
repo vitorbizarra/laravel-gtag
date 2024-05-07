@@ -1,12 +1,12 @@
 {
-    "name": "vitorbizarra/laravel-google-analytics",
-    "description": "This is my package laravel-google-analytics",
+    "name": "vitorbizarra/laravel-gtag",
+    "description": "This is my package laravel-gtag",
     "keywords": [
         "Vitor Bizarra",
         "laravel",
-        "laravel-google-analytics"
+        "laravel-gtag"
     ],
-    "homepage": "https://github.com/vitorbizarra/laravel-google-analytics",
+    "homepage": "https://github.com/vitorbizarra/laravel-gtag",
     "license": "MIT",
     "authors": [
         {
@@ -34,18 +34,18 @@
     },
     "autoload": {
         "psr-4": {
-            "VitorBizarra\\GoogleAnalytics\\": "src/"
+            "VitorBizarra\\Gtag\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VitorBizarra\\GoogleAnalytics\\Tests\\": "tests/",
+            "VitorBizarra\\Gtag\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
     "scripts": {
         "post-autoload-dump": "@composer run prepare",
-        "clear": "@php vendor/bin/testbench package:purge-laravel-google-analytics --ansi",
+        "clear": "@php vendor/bin/testbench package:purge-laravel-gtag --ansi",
         "prepare": "@php vendor/bin/testbench package:discover --ansi",
         "build": [
             "@composer run prepare",
@@ -71,10 +71,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VitorBizarra\\GoogleAnalytics\\GoogleAnalyticsServiceProvider"
+                "VitorBizarra\\Gtag\\GtagServiceProvider"
             ],
             "aliases": {
-                "GoogleAnalytics": "VitorBizarra\\GoogleAnalytics\\Facades\\GoogleAnalytics"
+                "Gtag": "VitorBizarra\\Gtag\\Facades\\Gtag"
             }
         }
     }

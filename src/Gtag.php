@@ -1,8 +1,8 @@
 <?php
 
-namespace VitorBizarra\GoogleAnalytics;
+namespace VitorBizarra\Gtag;
 
-class GoogleAnalytics
+class Gtag
 {
     /**
      * @var string

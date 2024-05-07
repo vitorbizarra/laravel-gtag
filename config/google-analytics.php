@@ -2,17 +2,17 @@
 
 return [
     /*
-     * The Google Analytics id, should be a code that looks something like "G-xxxx".
+     * The Google gtag id, should be a code that looks something like "G-xxxx".
      */
-    'id' => env('GOOGLE_ANALYTICS_ID', ''),
+    'id' => env('GTAG_ID', ''),
 
     /*
      * Enable or disable script rendering. Useful for local development.
      */
-    'enabled' => env('GOOGLE_ANALYTICS_ENABLED', true),
+    'enabled' => env('GTAG_ENABLED', true),
 
     /*
-     * Configures the Google Analytics script domain.
+     * Configures the Google gtag script domain.
      */
-    'domain' => env('GOOGLE_ANALYTICS_DOMAIN', 'www.googletagmanager.com'),
+    'domain' => env('GTAG_DOMAIN', 'www.googletagmanager.com'),
 ];
