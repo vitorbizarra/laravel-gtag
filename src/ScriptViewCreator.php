@@ -3,6 +3,7 @@
 namespace VitorBizarra\GoogleAnalytics;
 
 use Illuminate\View\View;
+use VitorBizarra\GoogleAnalytics\Exceptions\GoogleAnalyticsIdNotSetException;
 
 class ScriptViewCreator
 {
@@ -19,7 +20,7 @@ class ScriptViewCreator
     public function create(View $view)
     {
         if ($this->googleAnalytics->isEnabled() && empty($this->googleAnalytics->getId())) {
-
+            throw new GoogleAnalyticsIdNotSetException;
         }
 
         $view
