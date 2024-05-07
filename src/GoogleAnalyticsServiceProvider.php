@@ -2,22 +2,42 @@
 
 namespace VitorBizarra\GoogleAnalytics;
 
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
-use VitorBizarra\GoogleAnalytics\Commands\GoogleAnalyticsCommand;
+use Illuminate\Support\ServiceProvider;
 
-class GoogleAnalyticsServiceProvider extends PackageServiceProvider
+class GoogleAnalyticsServiceProvider extends ServiceProvider
 {
-    public function configurePackage(Package $package): void
+    public function boot()
     {
-        /*
-         * This class is a Package Service Provider
-         *
-         * More info: https://github.com/spatie/laravel-package-tools
-         */
-        $package
-            ->name('laravel-google-analytics')
-            ->hasConfigFile()
-            ->hasViews();
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'google-analytics');
+
+        $this->publishes([
+            __DIR__.'/../config/google-analytics.php' => config_path('google-analytics.php'),
+        ], 'config');
+
+        $this->publishes([
+            __DIR__.'/../resources/views' => base_path('resources/views/vendor/laravel-google-analytics'),
+        ], 'views');
+
+        $this->app['view']->creator(
+            ['google-analytics::script'],
+            'VitorBizarra\GoogleAnalytics\ScriptViewCreator'
+        );
+    }
+
+    public function register()
+    {
+        $this->mergeConfigFrom(__DIR__.'/../config/google-analytics.php', 'google-analytics');
+
+        $this->app->singleton(GoogleAnalytics::class, function ($app) {
+            $googleAnalytics = new GoogleAnalytics(
+                config('google-analytics.id'),
+                config('google-analytics.domain'),
+                config('google-analytics.enabled')
+            );
+
+            return $googleAnalytics;
+        });
+
+        $this->app->alias(GoogleAnalytics::class, 'google-analytics');
     }
 }

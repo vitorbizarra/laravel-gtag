@@ -34,8 +34,7 @@
     },
     "autoload": {
         "psr-4": {
-            "VitorBizarra\\GoogleAnalytics\\": "src/",
-            "VitorBizarra\\GoogleAnalytics\\Database\\Factories\\": "database/factories/"
+            "VitorBizarra\\GoogleAnalytics\\": "src/"
         }
     },
     "autoload-dev": {

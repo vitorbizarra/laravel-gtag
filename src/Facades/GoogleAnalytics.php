@@ -11,6 +11,6 @@ class GoogleAnalytics extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return \VitorBizarra\GoogleAnalytics\GoogleAnalytics::class;
+        return 'google-analytics';
     }
 }
