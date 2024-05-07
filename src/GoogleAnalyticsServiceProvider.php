@@ -18,8 +18,6 @@ class GoogleAnalyticsServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-google-analytics')
             ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_laravel-google-analytics_table')
-            ->hasCommand(GoogleAnalyticsCommand::class);
+            ->hasViews();
     }
 }
