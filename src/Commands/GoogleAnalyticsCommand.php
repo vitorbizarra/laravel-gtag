@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace VitorBizarra\GoogleAnalytics\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class GoogleAnalyticsCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-google-analytics';
 
     public $description = 'My command';
 
