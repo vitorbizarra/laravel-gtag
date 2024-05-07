@@ -12,11 +12,11 @@ class GoogleAnalyticsServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__.'/../config/google-analytics.php' => config_path('google-analytics.php'),
-        ], 'config');
+        ], 'laravel-google-analytics-config');
 
         $this->publishes([
             __DIR__.'/../resources/views' => base_path('resources/views/vendor/laravel-google-analytics'),
-        ], 'views');
+        ], 'laravel-google-analytics-views');
 
         $this->app['view']->creator(
             ['google-analytics::script'],
